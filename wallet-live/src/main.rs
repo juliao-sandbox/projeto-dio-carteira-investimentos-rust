@@ -1,4 +1,5 @@
 mod app;
+pub mod models;
 
 use crate::app::App;
 
