@@ -1,5 +1,5 @@
 use axum::Router;
-use std::sync::Arc;
+use std::{collections::HashMap, sync::Arc};
 use tokio::{net::TcpListener, sync::Mutex};
 use tracing::info;
 use tracing_subscriber::{
@@ -10,7 +10,7 @@ use crate::{models::Asset, routes};
 
 #[derive(Clone)]
 pub struct AppState {
-    pub assets: Arc<Mutex<Vec<Asset>>>,
+    pub assets: Arc<Mutex<HashMap<i64, Asset>>>,
 }
 
 impl AppState {
